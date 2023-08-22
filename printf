@@ -55,9 +55,12 @@ int _printf(const char *format, ...)
 			}
 			continue;
 		}
-		write(STDOUT_FILENO, format, 1);
-		++format;
-		++count;
+		else
+		{
+			write(STDOUT_FILENO, format, 1);
+			++format;
+			++count;
+		}
 	}
 
 	return (count);

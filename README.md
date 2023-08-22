@@ -1,3 +1,7 @@
 # printf
+* **Custom printf function**
 
-* custom printf function in C
+## Resources
+
+## Author
+* **Asere Oluwatumise S.** - [Tumixs](https://github.com/Tumixs)
