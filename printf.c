@@ -1,6 +1,5 @@
 /* Custom printf function */
 #include "main.h"
-#include <stdio.h>
 int _strlen(char *s);
 /**
  * _printf - prints a formatted string
@@ -16,6 +15,8 @@ int _printf(const char *format, ...)
 	char *s;
 
 	va_start(args, format);
+	if (!format)
+		return (-1);
 	while (*format)
 	{
 		if (*format == '%')
