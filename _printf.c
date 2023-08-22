@@ -14,7 +14,6 @@ int _printf(const char *format, ...)
 	char c;
 	void *ptr;
 	char *s;
-	int d;
 
 	va_start(args, format);
 	if (!format)
