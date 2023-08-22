@@ -9,7 +9,7 @@ int _strlen(char *s);
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int count;
+	int count = 0;
 	char c;
 	void *ptr;
 	char *s;
@@ -21,7 +21,8 @@ int _printf(const char *format, ...)
 	{
 		if (*format == '%')
 		{
-			++format;
+			if (!*(++format))
+				return (-1);
 			switch (*format)
 			{
 			case 'c':
@@ -42,9 +43,8 @@ int _printf(const char *format, ...)
 				c = '%';
 				ptr = &c;
 				count += write(STDIN_FILENO, ptr, 1);
+				format++;
 				break;
-			case '\0':
-				return (-1);
 			default:
 				c = '%';
 				ptr = &c;
